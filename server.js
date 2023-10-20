@@ -9,6 +9,10 @@ const path = require('path');
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 io.on('connection', (socket) => {
   console.log('A user connected.');
 
