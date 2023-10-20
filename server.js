@@ -6,6 +6,10 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 const path = require('path');
+const cors = require('cors');
+
+app.use(cors());
+
 
 app.use(express.static(__dirname + '/public'));
 
